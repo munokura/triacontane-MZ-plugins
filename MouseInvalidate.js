@@ -1,0 +1,102 @@
+/*=============================================================================
+ MouseInvalidate.js
+----------------------------------------------------------------------------
+ (C)2022 Triacontane
+ This software is released under the MIT License.
+ http://opensource.org/licenses/mit-license.php
+----------------------------------------------------------------------------
+ Version
+ 1.1.0 2025/06/16 指定したスイッチがONの時のみマウスやタッチ操作を無効化する機能を追加
+ 1.0.0 2022/07/07 初版
+----------------------------------------------------------------------------
+ [X]      : https://x.com/triacontane/
+ [GitHub] : https://github.com/triacontane/
+=============================================================================*/
+
+/*:
+@target MZ
+@url https://github.com/triacontane/RPGMakerMV/tree/mz_master/MouseInvalidate.js
+@plugindesc Touch Disable Plugin
+@author Triacontane
+@license MIT License
+
+@help
+English Help Translator: munokura
+Please check the URL below for the latest version of the plugin.
+URL https://triacontane.blogspot.com
+-----
+
+MouseInvalidate.js
+
+Completely disables mouse and touch controls throughout the game.
+
+This plugin requires the base plugin "PluginCommonBase.js."
+"PluginCommonBase.js" is located in the following folder under the RPG Maker
+MZ installation folder:
+
+dlc/BasicResources/plugins/official
+
+Terms of Use:
+You may modify and redistribute this plugin without permission, and there are
+no restrictions on its use (commercial, R18+, etc.).
+This plugin is now yours.
+
+@param switchId
+@text Disable Switch ID
+@desc If specified, mouse and touch operations will be disabled only when the switch is ON.
+@type switch
+@default 0
+*/
+
+/*:ja
+@plugindesc タッチ操作無効化プラグイン
+@target MZ
+@url https://github.com/triacontane/RPGMakerMV/tree/mz_master/MouseInvalidate.js
+@base PluginCommonBase
+@orderAfter PluginCommonBase
+@author トリアコンタン
+
+@param switchId
+@text 無効化スイッチID
+@desc 指定した場合、スイッチがONの時のみマウスやタッチ操作を無効化します。
+@default 0
+@type switch
+
+@help MouseInvalidate.js
+
+ゲーム中の全ての局面でマウスやタッチ操作を完全に無効化します。
+
+このプラグインの利用にはベースプラグイン『PluginCommonBase.js』が必要です。
+『PluginCommonBase.js』は、RPGツクールMZのインストールフォルダ配下の
+以下のフォルダに格納されています。
+dlc/BasicResources/plugins/official
+
+利用規約：
+ 作者に無断で改変、再配布が可能で、利用形態（商用、18禁利用等）
+ についても制限はありません。
+ このプラグインはもうあなたのものです。
+*/
+
+(()=> {
+    'use strict';
+    const script = document.currentScript;
+    const param = PluginManagerEx.createParameter(script);
+    const switchId = param.switchId;
+
+    const _TouchInput_update = TouchInput.update;
+    TouchInput.update = function() {
+        if (this.isTouchInvalid()) {
+            if (this._wasValid) {
+                this.clear();
+                this._wasValid = false;
+            }
+            return;
+        }
+        this._wasValid = true;
+        _TouchInput_update.apply(this, arguments);
+    };
+
+    TouchInput.isTouchInvalid = function() {
+        return !switchId || $gameSwitches?.value(switchId);
+    };
+})();

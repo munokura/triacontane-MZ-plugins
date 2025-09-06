@@ -1,0 +1,262 @@
+//=============================================================================
+// MouseBindToKey.js
+// ----------------------------------------------------------------------------
+// (C)2016 Triacontane
+// This software is released under the MIT License.
+// http://opensource.org/licenses/mit-license.php
+// ----------------------------------------------------------------------------
+// Version
+// 1.2.0 2024/10/10 プラグインの機能を一時的に無効化するスイッチを追加
+// 1.1.1 2023/11/26 押し続けに対応
+// 1.1.0 2023/11/26 MZで動作するよう修正
+// 1.0.0 2016/02/27 初版
+// ----------------------------------------------------------------------------
+// [Blog]   : https://triacontane.blogspot.jp/
+// [Twitter]: https://twitter.com/triacontane/
+// [GitHub] : https://github.com/triacontane/
+//=============================================================================
+
+/*:
+@target MZ
+@url https://github.com/triacontane/RPGMakerMV/tree/mz_master/MouseBindToKey.js
+@plugindesc Mouse input key binding plugin
+@author Triacontane
+@license MIT License
+
+@help
+English Help Translator: munokura
+Please check the URL below for the latest version of the plugin.
+URL https://triacontane.blogspot.com
+-----
+
+MouseBindToKey.js
+
+You can assign mouse clicks to specific button inputs.
+This plugin is for mouse (PC) input only. It does not support touch input.
+
+Terms of Use:
+You may modify and redistribute it without permission from the author, and
+there are no restrictions on its use (commercial, R18+, etc.).
+This plugin is now yours.
+
+@param LeftButton
+@text Left click button
+@desc This button corresponds to a left click.
+@type select
+@option tab
+@option ok
+@option shift
+@option control
+@option escape
+@option pageup
+@option pagedown
+@option left
+@option up
+@option right
+@option down
+@option debug
+@option menu
+
+@param MiddleButton
+@text Middle click button
+@desc This button corresponds to the center (wheel) click.
+@type select
+@option tab
+@option ok
+@option shift
+@option control
+@option escape
+@option pageup
+@option pagedown
+@option left
+@option up
+@option right
+@option down
+@option debug
+@option menu
+
+@param RightButton
+@text Right-click button
+@desc This button corresponds to a right click.
+@type select
+@option tab
+@option ok
+@option shift
+@option control
+@option escape
+@option pageup
+@option pagedown
+@option left
+@option up
+@option right
+@option down
+@option debug
+@option menu
+
+@param Suppress
+@text Suppress the original behavior
+@desc This suppresses the functionality originally assigned to the mouse, and does not affect the unassigned middle button.
+@type boolean
+@default false
+
+@param InvalidateSwitch
+@text Disable Switch
+@desc When the specified switch is ON, the function of this plug-in will be disabled.
+@type switch
+@default 0
+*/
+
+/*:ja
+@plugindesc マウス入力のキーバインドプラグイン
+@target MZ
+@url https://github.com/triacontane/RPGMakerMV/tree/mz_master/MouseBindToKey.js
+@base PluginCommonBase
+@orderAfter PluginCommonBase
+@author トリアコンタン
+
+@param LeftButton
+@text 左クリックボタン
+@desc 左クリックに対応するボタンです。
+@default
+@type select
+@option tab
+@option ok
+@option shift
+@option control
+@option escape
+@option pageup
+@option pagedown
+@option left
+@option up
+@option right
+@option down
+@option debug
+@option menu
+
+@param MiddleButton
+@text 中央クリックボタン
+@desc 中央（ホイール）クリックに対応するボタンです。
+@default
+@type select
+@option tab
+@option ok
+@option shift
+@option control
+@option escape
+@option pageup
+@option pagedown
+@option left
+@option up
+@option right
+@option down
+@option debug
+@option menu
+
+@param RightButton
+@text 右クリックボタン
+@desc 右クリックに対応するボタンです。
+@default
+@type select
+@option tab
+@option ok
+@option shift
+@option control
+@option escape
+@option pageup
+@option pagedown
+@option left
+@option up
+@option right
+@option down
+@option debug
+@option menu
+
+@param Suppress
+@text 元の動作を抑制
+@desc もともとマウスに割り当てられていた機能を抑制します。割り当てのない中央ボタンには影響しません。
+@default false
+@type boolean
+
+@param InvalidateSwitch
+@text 無効スイッチ
+@desc 指定したスイッチがONのとき、本プラグインの機能が無効になります。
+@default 0
+@type switch
+
+@help MouseBindToKey.js
+
+マウスクリックを特定のボタン入力に割り当てることができます。
+マウス(PC)入力専用プラグインです。タッチ操作には対応していません。
+
+利用規約：
+ 作者に無断で改変、再配布が可能で、利用形態（商用、18禁利用等）
+ についても制限はありません。
+ このプラグインはもうあなたのものです。
+*/
+
+(()=> {
+    'use strict';
+    const script = document.currentScript;
+    const param = PluginManagerEx.createParameter(script);
+
+    const _TouchInput__onLeftButtonDown = TouchInput._onLeftButtonDown;
+    TouchInput._onLeftButtonDown = function(event) {
+        _TouchInput__onLeftButtonDown.apply(this, arguments);
+        if (param.LeftButton) {
+            Input.setCurrentState(param.LeftButton, true);
+        }
+    };
+
+    const _TouchInput__onMiddleButtonDown = TouchInput._onMiddleButtonDown;
+    TouchInput._onMiddleButtonDown = function(event) {
+        _TouchInput__onMiddleButtonDown.apply(this, arguments);
+        if (param.MiddleButton) {
+            Input.setCurrentState(param.MiddleButton, true);
+        }
+    };
+
+    const _TouchInput__onRightButtonDown = TouchInput._onRightButtonDown;
+    TouchInput._onRightButtonDown = function(event) {
+        _TouchInput__onRightButtonDown.apply(this, arguments);
+        if (param.RightButton) {
+            Input.setCurrentState(param.RightButton, true);
+        }
+    };
+
+    const _TouchInput__onMouseUp = TouchInput._onMouseUp;
+    TouchInput._onMouseUp = function(event) {
+        _TouchInput__onMouseUp.apply(this, arguments);
+        if (param.LeftButton && event.button === 0) {
+            Input.setCurrentState(param.LeftButton, false);
+        }
+        if (param.MiddleButton && event.button === 1) {
+            Input.setCurrentState(param.MiddleButton, false);
+        }
+        if (param.RightButton && event.button === 2) {
+            Input.setCurrentState(param.RightButton, false);
+        }
+    };
+
+    Input.setCurrentState = function(button, value) {
+        if ($gameSwitches.value(param.InvalidateSwitch)) {
+            return;
+        }
+        this._currentState[button] = value;
+    };
+
+    const _TouchInput___onTrigger = TouchInput._onTrigger;
+    TouchInput._onTrigger = function(x, y) {
+        if (param.LeftButton && param.Suppress) {
+            return;
+        }
+        _TouchInput___onTrigger.apply(this, arguments);
+    };
+
+    const _TouchInput__onCancel = TouchInput._onCancel;
+    TouchInput._onCancel = function() {
+        if (param.RightButton && param.Suppress) {
+            return;
+        }
+        _TouchInput__onCancel.apply(this, arguments);
+    };
+})();
