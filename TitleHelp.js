@@ -16,7 +16,7 @@
 /*:
 @target MZ
 @url https://github.com/triacontane/RPGMakerMV/tree/mz_master/TitleHelp.js
-@plugindesc タイトルヘルププラグイン
+@plugindesc Title Help Plug-in
 @author Triacontane
 @license MIT License
 
@@ -28,58 +28,61 @@ URL https://triacontane.blogspot.com
 
 TitleHelp.js
 
-タイトル画面にヘルプウィンドウを表示できます。
-シンボルを指定することでコマンドごとのヘルプテキストを表示できます。
-シンボルが特定できれば、プラグインで追加されたコマンドにも対応できます。
+A help window can be displayed on the title screen.
+Help text for each command can be displayed by specifying a symbol.
+If the symbol can be specified, it can be used for commands added by plug-ins.
 
-newGame : ニューゲーム
-continue : コンティニュー
-options : オプション
-以下はプラグインで追加されるコマンドです。
-nameGame2_0 : アナザーニューゲーム(1番目)
-nameGame2_1 : アナザーニューゲーム(2番目)
-shutdown : ゲーム終了
-soundTest : サウンドテスト
+newGame : New Game
+continue : continue
+options : options
+The following are commands added by plug-ins.
+nameGame2_0 : Another New Game (1st)
+nameGame2_1 : another new game (second)
+shutdown : Game shutdown
+soundTest : sound test
 
-ヘルプの外観の調整は「ウィンドウ背景画像指定プラグイン」などが使えます。
+To adjust the appearance of help, you can use "Window Background Image
+Plug-in".
 
-このプラグインの利用にはベースプラグイン『PluginCommonBase.js』が必要です。
-『PluginCommonBase.js』は、RPGツクールMZのインストールフォルダ配下の
-以下のフォルダに格納されています。
+The base plugin "PluginCommonBase.js" is required to use this plugin.
+PluginCommonBase.js" is stored in the following folder under the RPG Tool MZ
+installation folder.
+under the RPG Tool MZ installation folder.
 dlc/BasicResources/plugins/official
 
-利用規約：
-作者に無断で改変、再配布が可能で、利用形態（商用、18禁利用等）
-についても制限はありません。
-このプラグインはもうあなたのものです。
+Terms of Use:
+You may modify and redistribute the software without permission of the author.
+There are no restrictions on the type of use (commercial, 18-content use,
+etc.).
+This plugin is now yours.
 
 @param descriptionList
-@text ヘルプリスト
-@desc コマンドごとのヘルプ一覧です。プラグインで追加されたコマンドがある場合はシンボルを確認してください。
+@text help list
+@desc Here is a list of help for each command. Check the symbols for any commands added by the plug-in.
 @type struct<TitleHelp>[]
 @default []
 
 @param helpWindowX
-@text ヘルプウィンドウX座標
-@desc ヘルプウィンドウのX座標です。
+@text Help Window X Coordinate
+@desc X coordinate of the help window.
 @type number
 @default 0
 
 @param helpWindowY
-@text ヘルプウィンドウY座標
-@desc ヘルプウィンドウのY座標です。
+@text Help Window Y Coordinate
+@desc Y coordinate of the help window.
 @type number
 @default 0
 
 @param helpWindowLines
-@text ヘルプウィンドウ行数
-@desc ヘルプウィンドウの行数です。
+@text Help Window Lines
+@desc The number of lines in the help window.
 @type number
 @default 1
 
 @param helpButton
-@text ヘルプボタン
-@desc ヘルプウィンドウを表示するボタンです。指定しない場合、常に表示されます。
+@text help button
+@desc This button displays the help window. If not specified, it is always displayed.
 @type combo
 @option cancel
 @option shift
@@ -90,20 +93,20 @@ dlc/BasicResources/plugins/official
 @option menu
 
 @param helpButtonTrigger
-@text ヘルプボタントリガー
-@desc ヘルプウィンドウを表示するボタンのトリガーです。
+@text help button trigger
+@desc Triggers a button to display a help window.
 @type select
 @default toggle
-@option 切り替え
+@option switching (to)
 @value toggle
-@option 押し続け
+@option (something) held in one's pressed hands
 @value press
 */
 
 /*~struct~TitleHelp:
 @param symbol
-@text シンボル
-@desc コマンドごとに一意になるシンボルです。
+@text symbol
+@desc A symbol that is unique for each command.
 @type combo
 @option newGame
 @option continue
@@ -114,19 +117,19 @@ dlc/BasicResources/plugins/official
 @option soundTest
 
 @param description
-@text 説明
-@desc コマンドの説明文です。
+@text Description.
+@desc Command Description.
 @type multiline_string
 
 @param enableOnly
-@text 選択可能時のみ表示
-@desc コマンドが選択可能な場合のみヘルプを表示します。
+@text Displayed only when available
+@desc Help is displayed only if the command is selectable.
 @type boolean
 @default false
 
 @param disableOnly
-@text 選択不可時のみ表示
-@desc コマンドが選択不可な場合のみヘルプを表示します。
+@text Displayed only when not selectable
+@desc Help is displayed only if the command is not selectable.
 @type boolean
 @default false
 */
