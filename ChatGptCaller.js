@@ -69,9 +69,10 @@ This plugin is now yours.
 
 @param responseSelfTrigger
 @text Self-triggered response reception
-@desc Please specify the self-switch that will be turned ON when a reply is received. If not specified, the setting of the plugin parameter will be used.
+@desc Please specify the self switch that will be turned ON when a reply is received. If not specified, the setting of the plugin parameter will be used.
 @type select
 @option none
+@value 
 @option A
 @value A
 @option B
@@ -110,9 +111,10 @@ This plugin is now yours.
 @default 0
 @arg responseSelfTrigger
 @text Self-triggered response reception
-@desc Please specify the self switch that will be turned ON when a reply is received. If not specified, the setting of the plugin parameter will be used.
+@desc Please specify the self-switch that will be turned ON when a reply is received. If not specified, the setting of the plugin parameter will be used.
 @type select
 @option none
+@value 
 @option A
 @value A
 @option B
