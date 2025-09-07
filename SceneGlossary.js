@@ -321,10 +321,9 @@ This plugin is now yours.
 @text Terminology information (required)
 @desc Glossary information. You can add any glossary. Be sure to register at least one term.
 @type struct<GlossaryData>[]
-@default ["{\"GlossaryType\":\"1\",\"CommandName\":\"用語辞典\",\"UseCategory\":\"false\",\"CommandSwitchId\":\"0\",\"BackPicture\":\"\",\"SelectAction\":\"0\",\"SelectSwitchId\":\"0\",\"SelectVariableId\":\"0\",\"ConfirmMessage\":\"false\",\"ConfirmUse\":\"使う\",\"ConfirmNoUse\":\"やめる\",\"GlossaryHelp\":\"ゲーム中に登場する用語を解説しています。\",\"CategoryHelp\":\"カテゴリを選択してください。\",\"ConfirmHelp\":\"\",\"UsingHelp\":\"\",\"CompleteView\":\"false\",\"CompleteMessage\":\"収集率 \\\\c[2]%1\\\\c[0] ％\",\"ShowingItemNumber\":\"false\",\"UsableDefault\":\"true\",\"UseItemHistory\":\"false\",\"GlossaryListWidth\":\"240\",\"VisibleItemNotYet\":\"\"}"]
+@default ["{\"GlossaryType\":\"1\",\"CommandName\":\"Glossary\",\"UseCategory\":\"false\",\"CommandSwitchId\":\"0\",\"BackPicture\":\"\",\"SelectAction\":\"0\",\"SelectSwitchId\":\"0\",\"SelectVariableId\":\"0\",\"ConfirmMessage\":\"false\",\"ConfirmUse\":\"use\",\"ConfirmNoUse\":\"no use\",\"GlossaryHelp\":\"Explains terms that appear in the game.\",\"CategoryHelp\":\"Please select a category.\",\"ConfirmHelp\":\"\",\"UsingHelp\":\"\",\"CompleteView\":\"false\",\"CompleteMessage\":\"Collection rate \\\\c[2]%1\\\\c[0] %\",\"ShowingItemNumber\":\"false\",\"UsableDefault\":\"true\",\"UseItemHistory\":\"false\",\"GlossaryListWidth\":\"240\",\"VisibleItemNotYet\":\"\"}"]
 
 @param Layout
-@text Layout
 @desc This is a layout setting related item. Please do not enter anything here as this is a summary item.
 
 @param FontSize
@@ -509,7 +508,7 @@ This plugin is now yours.
 @type item
 @default 1
 @arg enable
-@text Available or not
+@text Availability
 @desc Set whether the item can be used.
 @type boolean
 @default true
@@ -526,7 +525,7 @@ This plugin is now yours.
 @param CommandName
 @text Command Name
 @desc This is the command name that will be displayed on the menu screen. If you leave it blank, it will not be displayed on the menu screen.
-@default 用語辞典
+@default Glossary
 
 @param UseCategory
 @text Category Classification
@@ -582,24 +581,24 @@ This plugin is now yours.
 @param ConfirmUse
 @text Check_Use
 @desc This is the message to use in the confirmation message.
-@default 使う
+@default use
 @parent ConfirmMessage
 
 @param ConfirmNoUse
 @text Check_Do not use
 @desc This is the message to use if not used in the confirmation message.
-@default やめる
+@default not use
 @parent ConfirmMessage
 
 @param GlossaryHelp
 @text Terminology Help
 @desc This is the text to be displayed on the help screen when selecting a term list. If not specified, the window will be hidden. (Line break code: \n)
-@default ゲーム中に登場する用語を解説しています。
+@default Explains terms that appear in the game.
 
 @param CategoryHelp
 @text Category Help
 @desc This is the text to be displayed on the help screen when selecting a term category. (Line break code: \n)
-@default カテゴリを選択してください。
+@default Please select a category.
 @parent GlossaryHelp
 
 @param ConfirmHelp
@@ -621,7 +620,7 @@ This plugin is now yours.
 @param CompleteMessage
 @text Collection Rate Message
 @desc This is the text that displays the collection rate. "%1" will be converted to the collection rate.
-@default 収集率 \c[2]%1\c[0] ％
+@default Collection rate \c[2]%1\c[0] ％
 @parent CompleteView
 
 @param ShowingItemNumber

@@ -115,13 +115,13 @@ This plugin is now yours.
 @desc Set this if you want to change the default order of items that have the same addition position specified.
 @type select[]
 @default ["NumberOptions","StringOptions","SwitchOptions","VolumeOptions"]
-@option 数値項目
+@option Numerical items
 @value NumberOptions
-@option 文字列項目
+@option string item
 @value StringOptions
-@option スイッチ項目
+@option Switch Item
 @value SwitchOptions
-@option 音量項目
+@option Volume item
 @value VolumeOptions
 
 @command UNLOCK
@@ -143,7 +143,7 @@ This plugin is now yours.
 @param Name
 @text Item name
 @desc The name of the item.
-@default 数値項目1
+@default Numerical item 1
 
 @param DefaultValue
 @text Initial Value
@@ -159,7 +159,7 @@ This plugin is now yours.
 
 @param HiddenFlag
 @text Hidden Flag
-@desc The item will be hidden by default and will be shown when you run the plugin command.
+@desc The item will be hidden by default and will be displayed when you run the plugin command.
 @type boolean
 @default false
 
@@ -189,7 +189,8 @@ This plugin is now yours.
 @text additional position
 @desc The position to add the item above.
 @type select
-@option 末尾に追加
+@option Add to the end
+@value 
 @option Constant dash
 @value alwaysDash
 @option Command Memory
@@ -216,7 +217,7 @@ This plugin is now yours.
 @param Name
 @text Item name
 @desc The name of the item.
-@default スイッチ項目1
+@default Switch item 1
 
 @param DefaultValue
 @text Initial Value
@@ -252,7 +253,8 @@ This plugin is now yours.
 @text additional position
 @desc The position to add the item above.
 @type select
-@option 末尾に追加
+@option Add to the end
+@value 
 @option Constant dash
 @value alwaysDash
 @option Command Memory
@@ -279,7 +281,7 @@ This plugin is now yours.
 @param Name
 @text Item name
 @desc The name of the item.
-@default 文字列項目1
+@default string item 1
 
 @param DefaultValue
 @text Initial Value
@@ -312,7 +314,8 @@ This plugin is now yours.
 @text additional position
 @desc The position to add the item above.
 @type select
-@option 末尾に追加
+@option Add to the end
+@value 
 @option Constant dash
 @value alwaysDash
 @option Command Memory
@@ -339,7 +342,7 @@ This plugin is now yours.
 @param Name
 @text Item name
 @desc The name of the item.
-@default 音量項目1
+@default Volume item 1
 
 @param DefaultValue
 @text Initial Value
@@ -367,7 +370,8 @@ This plugin is now yours.
 @text additional position
 @desc The position to add the item above.
 @type select
-@option 末尾に追加
+@option Add to the end
+@value 
 @option Constant dash
 @value alwaysDash
 @option Command Memory

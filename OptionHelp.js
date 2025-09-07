@@ -76,7 +76,7 @@ This plugin is now yours.
 @text Help List
 @desc This is the list of help displayed on the options screen.
 @type struct<Help>[]
-@default ["{\"symbol\":\"alwaysDash\",\"description\":\"Shiftキーを押さなくても自動でダッシュします。\"}","{\"symbol\":\"commandRemember\",\"description\":\"戦闘中に選択したコマンドの入力内容を記憶します。\"}","{\"symbol\":\"touchUI\",\"description\":\"メニュー画面にタッチ用のボタンを表示します。\"}","{\"symbol\":\"bgmVolume\",\"description\":\"BGMの音量を調整します。\"}","{\"symbol\":\"bgsVolume\",\"description\":\"BGSの音量を調整します。\"}","{\"symbol\":\"meVolume\",\"description\":\"MEの音量を調整します。\"}","{\"symbol\":\"seVolume\",\"description\":\"SEの音量を調整します。\"}"]
+@default ["{\"symbol\":\"alwaysDash\",\"description\":\"You will automatically dash without holding down the Shift key.\"}","{\"symbol\":\"commandRemember\",\"description\":\"It remembers the command input you select during battle.\"}","{\"symbol\":\"touchUI\",\"description\":\"Displays touch buttons on the menu screen.\"}","{\"symbol\":\"bgmVolume\",\"description\":\"Adjust the volume of the background music.\"}","{\"symbol\":\"bgsVolume\",\"description\":\"Adjusts the volume of the background music.\"}","{\"symbol\":\"meVolume\",\"description\":\"Adjust the volume of the ME.\"}","{\"symbol\":\"seVolume\",\"description\":\"Adjusts the volume of the SE.\"}"]
 
 @param helpLines
 @text Help Lines
@@ -87,7 +87,6 @@ This plugin is now yours.
 
 /*~struct~Help:
 @param symbol
-@text symbol
 @desc The symbolic string for the help topic.
 @type combo
 @option alwaysDash

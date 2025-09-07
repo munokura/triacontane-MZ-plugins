@@ -49,37 +49,37 @@ This plugin is now yours.
 @desc The plug-in function will be disabled in the specified scene, and the window will resume flashing.
 @type select[]
 @default []
-@option タイトル
+@option title
 @value Scene_Title
-@option マップ
+@option map
 @value Scene_Map
-@option ゲームオーバー
+@option game over
 @value Scene_Gameover
-@option バトル
+@option Battle
 @value Scene_Battle
-@option メインメニュー
+@option Main Menu
 @value Scene_Menu
-@option アイテム
+@option item
 @value Scene_Item
-@option スキル
+@option skill
 @value Scene_Skill
-@option 装備
+@option Equipment
 @value Scene_Equip
-@option ステータス
+@option status
 @value Scene_Status
-@option オプション
+@option option
 @value Scene_Options
-@option セーブ
+@option save
 @value Scene_Save
-@option ロード
+@option load
 @value Scene_Load
-@option ゲーム終了
+@option Game End
 @value Scene_End
-@option ショップ
+@option shop
 @value Scene_Shop
-@option 名前入力
+@option Enter your name
 @value Scene_Name
-@option デバッグ
+@option debug
 @value Scene_Debug
 */
 

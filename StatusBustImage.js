@@ -130,32 +130,41 @@ author, and there are no restrictions on its use (commercial, R18, etc.).
 This plugin is now yours.
 
 @param 画像X座標
+@text Image X coordinate
 @desc This is the X coordinate (origin under the feet) where the bust-up image is displayed.
 @default 640
 
 @param 画像Y座標
+@text Image Y coordinate
 @desc This is the Y coordinate (origin under the feet) where the bust-up image is displayed.
 @default 620
 
 @param 装備_画像X座標
+@text Equipment_Image X coordinate
 @desc This is the X coordinate (foot origin) for displaying the bust-up image on the equipment screen. If not specified, it will not be displayed.
 
 @param 装備_画像Y座標
+@text Equipment_Image Y coordinate
 @desc This is the Y coordinate (foot origin) for displaying the bust-up image on the equipment screen. If not specified, it will not be displayed.
 
 @param スキル_画像X座標
+@text Skill_Image X coordinate
 @desc This is the X coordinate (foot origin) for displaying the bust-up image on the skill screen. If not specified, it will not be displayed.
 
 @param スキル_画像Y座標
+@text Skill_Image Y coordinate
 @desc This is the Y coordinate (foot origin) for displaying the bust-up image on the skill screen. If not specified, it will not be displayed.
 
 @param メイン_画像X座標
+@text Main_Image X coordinate
 @desc This is the Y coordinate (foot origin) for displaying the bust-up image on the main menu screen. If not specified, it will not be displayed.
 
 @param メイン_画像Y座標
+@text Main_Image Y coordinate
 @desc This is the Y coordinate (foot origin) for displaying the bust-up image on the main menu screen. If not specified, it will not be displayed.
 
 @param 表示優先度
+@text Display priority
 @desc This is the display priority of bust-up images.
 @type select
 @default 0
@@ -165,6 +174,7 @@ This plugin is now yours.
 @value 1
 
 @param ベース画像原点
+@text Base Image Origin
 @desc The origin of the base image.
 @type select
 @default 2
@@ -176,6 +186,7 @@ This plugin is now yours.
 @value 2
 
 @param 追加画像原点
+@text Additional Image Origin
 @desc This is the origin of nostalgic images and equipment images.
 @type select
 @default 2

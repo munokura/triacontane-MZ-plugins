@@ -94,6 +94,7 @@ author, and there are no restrictions on its use (commercial, R18+, etc.).
 This plugin is now yours.
 
 @param スキップキー
+@text Skip Key
 @desc Key corresponding to message skip
 @type select
 @default S
@@ -103,6 +104,7 @@ This plugin is now yours.
 @option S
 
 @param オートキー
+@text Auto Key
 @desc Key corresponding to message auto
 @type select
 @default A
@@ -112,36 +114,43 @@ This plugin is now yours.
 @option A
 
 @param スキップスイッチ
+@text Skip Switch
 @desc If the switch with the specified number is ON, it will always skip. If it is OFF, it will stop.
 @type switch
 @default 0
 
 @param オートスイッチ
+@text Auto Switch
 @desc When the switch with the specified number is ON, it will always be in auto mode. Skip mode takes priority. When it is OFF, it will stop.
 @type switch
 @default 0
 
 @param スキップアイコン
+@text Skip icon
 @desc An icon that appears in the bottom right of the window when a message is skipped
 @type icon
 @default 140
 
 @param オートアイコン
+@text Auto Icon
 @desc An icon that appears in the bottom right corner of the window during message auto
 @type icon
 @default 75
 
 @param スキップアイコンピクチャ
+@text Skip Icon Picture
 @desc Picture displayed in the bottom right corner of the window while skipping a message
 @type file
 @dir img/pictures/
 
 @param オートアイコンピクチャ
+@text Auto Icon Picture
 @desc Picture displayed at the bottom right of the window during message auto
 @type file
 @dir img/pictures/
 
 @param アイコンX
+@text Icon X
 @desc This is the X coordinate to specify if you want to freely change the position of the auto and skip icons.
 @type number
 @default 0
@@ -149,6 +158,7 @@ This plugin is now yours.
 @max 2000
 
 @param アイコンY
+@text Icon Y
 @desc This is the X coordinate to specify if you want to freely change the position of the auto and skip icons.
 @type number
 @default 0
@@ -156,78 +166,93 @@ This plugin is now yours.
 @max 2000
 
 @param 押し続けスキップ
+@text Press and hold to skip
 @desc The skip will only be judged while the specified key is pressed.
 @type boolean
 @default false
 
 @param ピクチャは押し続け対象外
+@text Press and hold the picture to exclude it.
 @desc Pictures cannot be skipped by pressing and holding.
 @type boolean
 @default true
 
 @param オート待機フレーム
+@text Auto Wait Frame
 @desc The number of frames the message will be displayed for when auto mode is enabled. You can specify the control character \v[n] and a calculation expression.
 @default 100 + textSize * 10
 
 @param 終了解除スイッチID
+@text Termination release switch ID
 @desc When the switch with the specified number is ON, the skip and auto states will be canceled when the event ends. If the value is 0, they will always be canceled.
 @type switch
 @default 0
 
 @param スキップピクチャ
+@text Skip Picture
 @desc The file name of the skip picture to display in the window. Click to enter skip mode.
 @type file
 @require 1
 @dir img/pictures/
 
 @param スキップピクチャX
+@text Skip Picture X
 @desc The x-coordinate of the skip picture to display in the window.
 @type number
 @default 500
 
 @param スキップピクチャY
+@text Skip Picture Y
 @desc The Y coordinate of the skip picture to display in the window.
 @type number
 @default 0
 
 @param オートピクチャ
+@text Auto Picture
 @desc The file name of the auto picture to display in the window. Click to enter auto mode.
 @type file
 @require 1
 @dir img/pictures/
 
 @param オートピクチャX
+@text Auto Picture X
 @desc The X coordinate of the AutoPicture to display in the window.
 @type number
 @default 750
 
 @param オートピクチャY
+@text Auto Picture Y
 @desc The Y coordinate of the AutoPicture to display in the window.
 @type number
 @default 0
 
 @param スイッチピクチャ
+@text Switch Picture
 @desc This is the file name of the switch picture to be displayed in the window. Clicking this will turn the specified switch ON.
 @type file
 @require 1
 @dir img/pictures/
 
 @param スイッチピクチャトリガー
+@text Switch Picture Trigger
 @desc The switch number that will be turned ON when the switch picture is clicked.
 @type switch
 @default 0
 
 @param スイッチピクチャX
+@text Switch Picture X
 @desc The X coordinate of the switch picture to display in the window.
 @type number
 @default 750
 
 @param スイッチピクチャY
+@text Switch Picture Y
 @desc The Y coordinate of the switch picture to display in the window.
 @type number
 @default 0
 
 @param ボタン原点
+@text Button Origin
 @desc This is the origin of the coordinates for each picture button (skip, auto). The four corners of the message window are the reference coordinates.
 @type select
 @default 0
@@ -235,17 +260,19 @@ This plugin is now yours.
 @value 0
 @option Top right of the window
 @value 1
-@option bottom left of the window
+@option Bottom left of the window
 @value 2
 @option bottom right of the window
 @value 3
 
 @param ボタン表示スイッチID
+@text Button Display Switch ID
 @desc The skip and auto picture buttons will be displayed only when the switch with the specified number is ON. If the number is 0, they will be displayed unconditionally.
 @type switch
 @default 0
 
 @param ピクチャ座標タイプ
+@text Picture Coordinate Types
 @desc Auto and Skip Picture placement methods. If you select Relative Coordinates, the coordinates will be relative to the window display position.
 @type select
 @default relative
@@ -255,6 +282,7 @@ This plugin is now yours.
 @value relative
 
 @param 無効化スイッチ
+@text Disable switch
 @desc When the specified switch is ON, all functions of the plugin will be disabled.
 @type switch
 @default 0
