@@ -91,7 +91,7 @@ This plugin is now yours.
 @text Request Template
 @desc This is a template for requests to add weapons or enemy characters. No editing is required.
 @type multiline_string
-@default %1ような%2を1つ考えてください。結果はRPGツクールMZのデータベースのjson形式で返してください。
+@default Please come up with one %2 like %1. Please return the result in RPG Maker MZ database json format.
 
 @command CALL_GPT_QUESTION
 @text Question call
