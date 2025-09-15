@@ -1,2 +1,4 @@
-トリアコンタン氏作成のRPGツクールMZ用プラグインに記載されているヘルプに英語を追加したものです。
-[本家](https://github.com/triacontane/RPGMakerMV)にマージされた場合（もしくは本家自身が英語対応した場合）、削除していきます。
+- English Help Translator: munokura
+- This is an unofficial English translation of the plugin help, created to support global RPG Maker users.
+- Original plugin by Triacontane.
+- Please check the latest official version at: https://triacontane.blogspot.com
