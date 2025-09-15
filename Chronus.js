@@ -92,8 +92,11 @@
 
 @help
 English Help Translator: munokura
-Please check the URL below for the latest version of the plugin.
-URL https://triacontane.blogspot.com
+This is an unofficial English translation of the plugin help,
+created to support global RPG Maker users.
+Original plugin by Triacontane.
+Please check the latest official version at:
+https://triacontane.blogspot.com
 -----
 
 This plugin lets you express the concepts of time and weather in-game.
