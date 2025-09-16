@@ -55,6 +55,8 @@
 English Help Translator: munokura
 This is an unofficial English translation of the plugin help,
 created to support global RPG Maker users.
+Feedback is welcome to improve translation quality
+(see: https://github.com/munokura/triacontane-MZ-plugins ).
 Original plugin by Triacontane.
 Please check the latest official version at:
 https://triacontane.blogspot.com
